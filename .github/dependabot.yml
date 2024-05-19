@@ -1,13 +1,11 @@
 version: 2
 updates:
-  - package-ecosystem: "npm"
-    directory: "/mars/services/web/ui"
+  - package-ecosystem: "pip"
+    directory: "/"
+    insecure-external-code-execution: allow
+    pull-request-branch-name:
+      # Separate sections of the branch name with a hyphen
+      # for example, `dependabot-npm_and_yarn-next_js-acorn-6.4.1`
+      separator: "-"
     schedule:
-      interval: "monthly"
-    labels:
-      - "type: enhancement"
-      - "mod: web"
-      - "to be backported"
-    # Disable version updates for npm dependencies
-    open-pull-requests-limit: 0
-
+      interval: "daily"
